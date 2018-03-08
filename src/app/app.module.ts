@@ -12,6 +12,8 @@ import { CustomersDeleteComponent } from './customers/customers-delete/customers
 import { CustomersCreateComponent } from './customers/customers-create/customers-create.component';
 import { CustomersEditComponent } from './customers/customers-edit/customers-edit.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { DataManagerService } from './service/data-manager.service';
+import { CustomerComponent } from './customers/customer/customer.component';
 
 
 
@@ -26,12 +28,13 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     CustomersCreateComponent,
     CustomersEditComponent,
     NavBarComponent,
+    CustomerComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
-  ],  providers: [],
+  ],  providers: [DataManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
