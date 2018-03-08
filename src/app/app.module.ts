@@ -13,6 +13,7 @@ import { CustomersCreateComponent } from './customers/customers-create/customers
 import { CustomersEditComponent } from './customers/customers-edit/customers-edit.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { DataManagerService } from './service/data-manager.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -27,6 +28,7 @@ import { DataManagerService } from './service/data-manager.service';
     CustomersCreateComponent,
     CustomersEditComponent,
     NavBarComponent,
+    FooterComponent,
 
   ],
   imports: [

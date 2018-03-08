@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataManagerService } from '../../service/data-manager.service';
+import { Customer } from '../customer';
 
 @Component({
   selector: 'app-customers-list',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersListComponent implements OnInit {
 
-  constructor() { }
+  customers: Customer[];
+  // Assuming that the component 
+// has a property/field named "customers"...
+constructor(private m: DataManagerService) {
+  // Fetch the customers from the service,
+  // and assign the value to the class property "customers"
+  this.customers = this.m.getCustomers();
+}
 
   ngOnInit() {
   }

@@ -1,3 +1,17 @@
-<p>
-  customers-list works!
-</p>
+<table class="table table-hover table-responsive-md" id="MainTable">
+  <thead>
+      <th class="hidden"></th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>City</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of customers">
+      <td class="hidden">{{c.id}}</td>
+      <td>{{c.first_name}}</td>
+      <td>{{c.last_name}}</td>
+      <td>{{c.city}}</td>
+    </tr>
+      <!-- Where Content will be added by jQuery -->
+  </tbody>
+</table>
