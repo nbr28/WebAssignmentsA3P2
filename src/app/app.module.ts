@@ -11,7 +11,7 @@ import { CustomersDetailComponent } from './customers/customers-detail/customers
 import { CustomersDeleteComponent } from './customers/customers-delete/customers-delete.component';
 import { CustomersCreateComponent } from './customers/customers-create/customers-create.component';
 import { CustomersEditComponent } from './customers/customers-edit/customers-edit.component';
-import { NavBarComponent } from './componets/nav-bar/nav-bar.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 
