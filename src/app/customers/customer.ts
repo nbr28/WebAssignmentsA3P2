@@ -1,7 +1,7 @@
 export class Customer {
   id: number;
-  firstname: string;
-  lastname: string;
+  first_name: string;
+  last_name: string;
   city: string;
   email: string;
   website: string;
