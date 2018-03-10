@@ -27,7 +27,7 @@
 
           <div class="btn-toolbar text-center" role="toolbar">
             <button class="btn btn-default" (click)='this.router.navigate(["/customers"])'>Back to list</button>
-            <button type="button" class="btn btn-primary" (click)="">Edit this Customer</button>
+            <button type="button" class="btn btn-primary" (click)='editCustomer()'>Edit this Customer</button>
             <button *ngIf="!toDelete" type="button" class="btn btn-warning" (click)="onClickDelete()">Delete this customer</button>
             <button *ngIf="toDelete" type="button" class="btn btn-danger" (click)="onClickDeleteAccept()">Yes, Delete</button>
           </div>

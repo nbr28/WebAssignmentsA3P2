@@ -16,6 +16,8 @@ export class CustomersEditComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router,
     private service: DataManagerService) {
+    let id = this.route.snapshot.params['id'];
+    Object.assign(this.customer,service.getCustomer(id));
   }
 
   ngOnInit() {
@@ -23,8 +25,12 @@ export class CustomersEditComponent implements OnInit {
 
   onClickAdd() {
     this.service.editCustomer(this.customer);
-    this.router.navigate(["/customers"]);
-    }
+    this.router.navigate(["/customerdetail/"+this.customer.id]);
+  }
 
+  backToDetails()
+  {
+    this.router.navigate(["/customerdetail/"+this.customer.id]);    
+  }
 
 }

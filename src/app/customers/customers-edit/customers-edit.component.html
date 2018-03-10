@@ -33,7 +33,8 @@
   
             <div class="btn-toolbar text-center" role="toolbar">
               <button class="btn btn-default" (click)='this.router.navigate(["/customers"])'>Back to list</button>
-              <button *ngIf="!toDelete" type="button" class="btn btn-success" (click)="onClickAdd()">Add this customer</button>
+              <button class="btn btn-default" (click)='backToDetails()'>Back to Details</button>
+              <button *ngIf="!toDelete" type="button" class="btn btn-primary" (click)="onClickAdd()">Save Customer</button>
               <button *ngIf="toDelete" type="button" class="btn btn-danger" (click)="onClickDeleteAccept()">Yes, Delete</button>
             </div>
           </div>

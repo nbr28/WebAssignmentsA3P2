@@ -33,4 +33,8 @@ export class CustomersDetailComponent implements OnInit {
     this.service.deleteCustomer(this.selectedCust);
     this.router.navigate(["/customers"]);
   }
+  editCustomer()
+  {
+    this.router.navigate(["/customeredit/"+this.selectedCust.id]);  
+  }
 }
