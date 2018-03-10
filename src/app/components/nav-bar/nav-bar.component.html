@@ -1,32 +1,31 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-      <div class="navbar-header">
-          <!-- This is the hamburger button -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-              aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar">Data 1</span>
-              <span class="icon-bar">Data 2</span>
-              <span class="icon-bar">Data 3</span>
-          </button>
-          <a href="index.html" class="navbar-brand">Home page</a>
-      </div>
-      <!-- Menu items, set "active" class on additional pages -->
-      <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-              <li>
-                  <a href="LocalData.html">Local Data</a>
-              </li>
-              <li>
-                  <a href="LocalDataKO.html">Local Data With KO</a>
-              </li>
-              <li>
-                  <a href="FetchedData.html">Fetched Data</a>
-              </li>
-              <li>
-                  <a href="FetchedDataKO.html">Fetched Data KO</a>
-              </li>
-          </ul>
-      </div>
-  </div>
+    <div class="container">
+        <div class="navbar-header">
+            <!-- This is the hamburger button -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">Data 1</span>
+                <span class="icon-bar">Data 2</span>
+                <span class="icon-bar">Data 3</span>
+            </button>
+            <a href="index.html" class="navbar-brand">Home page</a>
+        </div>
+        <!-- Menu items, set "active" class on additional pages -->
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a routerLink='/customers'>Customer list</a>
+                </li>
+                <li>
+                    <a routerLink='/customercreate'>Create Customer</a>
+                <li>
+                    <!-- <a href="FetchedData.html">Fetched Data</a> -->
+                </li>
+                <li>
+                    <!-- <a href="FetchedDataKO.html">Fetched Data KO</a> -->
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
