@@ -30,7 +30,7 @@ export class CustomersDetailComponent implements OnInit {
 
   onClickDeleteAccept()
   {
-    this.service.deleteCistomer(this.selectedCust);
+    this.service.deleteCustomer(this.selectedCust);
     this.router.navigate(["/customers"]);
   }
 }

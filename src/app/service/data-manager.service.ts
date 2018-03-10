@@ -19,9 +19,22 @@ export class DataManagerService {
     });
   }
 
-  deleteCistomer(cust:Customer)
+  deleteCustomer(cust:Customer)
+  { 
+    this.customers.splice(this.customers.indexOf(cust),1);
+  }
+
+  addNewCustomer(customer:Customer)
   {
-    delete this.customers[this.customers.indexOf(cust)];
+    customer.id=this.getNextId();
+    this.customers.push(customer);
+  }
+
+  private getNextId() {
+    // Get the maximum value for the "id" property
+    let maxId = this.customers.reduce((max, c) => c.id > max ? c.id : max, this.customers[0].id);
+    // Return this-plus-one 
+    return maxId + 1;
   }
   private loadCustomers() { this.customers=[{ "id": 1, "first_name": "Shena", "last_name": "Szimoni", "city": "Sinmak", "email": "sszimoni0@thetimes.co.uk", "website": "http://clickbank.net/donec/vitae/nisi/nam/ultrices.jpg", "birthdate": "1990-05-21T07:50:11Z", "credits": 5230 },
   { "id": 2, "first_name": "Ellynn", "last_name": "Malins", "city": "Liangbing", "email": "emalins1@toplist.cz", "website": "https://nydailynews.com/aliquam/erat/volutpat/in/congue/etiam/justo.xml", "birthdate": "1993-02-06T17:36:05Z", "credits": 7156 },

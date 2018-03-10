@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormsModule } from "@angular/forms";
+import { Router, ActivatedRoute } from '@angular/router';
+import { Customer } from '../customer';
+import { DataManagerService } from '../../service/data-manager.service';
 
 @Component({
   selector: 'app-customers-create',
@@ -8,9 +11,18 @@ import { Router } from '@angular/router';
 })
 export class CustomersCreateComponent implements OnInit {
 
-  constructor() { }
+  customer: Customer = new Customer();
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private service: DataManagerService) {
+  }
 
   ngOnInit() {
   }
+
+  onClickAdd() {
+    this.service.addNewCustomer(this.customer);
+    this.router.navigate(["/customers"]);
+    }
 
 }
