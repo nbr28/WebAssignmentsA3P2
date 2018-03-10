@@ -20,10 +20,11 @@ export class DataManagerService {
     });
   }
 
-  editCustomer(arg0: any): any {
-    throw new Error("Method not implemented.");
+  editCustomer(customer:Customer) {
+    this.deleteCustomer(this.getCustomer(customer.id));//get the unaltered customer
+    this.addNewCustomer(customer);
   }
-  
+
   deleteCustomer(cust: Customer) {
     this.customers.splice(this.customers.indexOf(cust), 1);
   }
