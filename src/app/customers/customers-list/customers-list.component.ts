@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataManagerService } from '../../service/data-manager.service';
 import { Customer } from '../customer';
+import { Router } from '@angular/router';
+import {routes} from '../../app-routing.module';
 
 @Component({
   selector: 'app-customers-list',
@@ -10,11 +12,10 @@ import { Customer } from '../customer';
 export class CustomersListComponent implements OnInit {
 
   customers: Customer[];
-  selectedCust: Customer;
   
   // Assuming that the component 
 // has a property/field named "customers"...
-constructor(private m: DataManagerService) {
+constructor(private m: DataManagerService, private router: Router) {
   // Fetch the customers from the service,
   // and assign the value to the class property "customers"
   this.customers = this.m.getCustomers();
@@ -24,6 +25,6 @@ constructor(private m: DataManagerService) {
   }
 
   onClick(c: Customer) {
-    this.selectedCust = c;
+    this.router.navigate(['/customerdetail',c.id]);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {Customer} from '../customer';
+import { DataManagerService } from '../../service/data-manager.service';
 
 @Component({
   selector: 'app-customers-detail',
@@ -9,9 +10,14 @@ import {Customer} from '../customer';
 })
 export class CustomersDetailComponent implements OnInit {
 
-  @Input() selectedCust: Customer;
-
-  constructor() {
+  // @Input() selectedCust: Customer;
+  selectedCust:Customer;
+  constructor(
+    private route:ActivatedRoute,
+    private router:Router,
+    private service:DataManagerService) {
+      let id=this.route.snapshot.params['id'];
+      this.selectedCust=service.getCustomer(id);
    }
   
   ngOnInit() {
