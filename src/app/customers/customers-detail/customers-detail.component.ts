@@ -10,6 +10,7 @@ import { DataManagerService } from '../../service/data-manager.service';
 })
 export class CustomersDetailComponent implements OnInit {
 
+  toDelete:boolean = false;
   // @Input() selectedCust: Customer;
   selectedCust:Customer;
   constructor(
@@ -22,5 +23,13 @@ export class CustomersDetailComponent implements OnInit {
   
   ngOnInit() {
   }
+  onClickDelete()
+  {
+    this.toDelete=true;
+  }
 
+  onClickDeleteAccept()
+  {
+    
+  }
 }

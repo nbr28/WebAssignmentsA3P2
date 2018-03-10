@@ -10,8 +10,9 @@
       <div class="panel">
         <div class="panel-body">
           <dl class="dl-horizontal">
-
-            <h1>Customer Detail - {{ selectedCust.first_name }} {{ selectedCust.last_name }}</h1>
+            
+            <h1 *ngIf="!toDelete">Customer Detail - {{ selectedCust.first_name }} {{ selectedCust.last_name }}</h1>
+            <h1 class="delete" *ngIf="toDelete">Delete this customer? {{ selectedCust.first_name }} {{ selectedCust.last_name }}</h1>
             <dt>First Name: </dt>
             <dd> {{ selectedCust.first_name }}</dd>
             <dt>Last Name: </dt>
@@ -31,11 +32,9 @@
           </dl>
 
           <div class="btn-toolbar text-center" role="toolbar">
-            <button type="button" class="btn btn-primary">Expandable</button>
-            <button type="button" class="btn btn-primary">ERROR
-              <span class="caret"></span>
-            </button>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button class="btn btn-default" (click)='this.router.navigate(["/customers"])'>Back to list</button>
+            <button *ngIf="!toDelete" type="button" class="btn btn-warning" (click)="onClickDelete()">Delete this customer</button>
+            <button *ngIf="toDelete" type="button" class="btn btn-danger" (click)="onClickDeleteAccept()">Yes, Delete</button>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@
               <th>City</th>
             </thead>
             <tbody>
-              <tr class="tablePointer" *ngFor="let c of customers" (click)="onClick(c)">
+              <tr id="{{c.id}}Row" class="tablePointer" *ngFor="let c of customers" (click)="onClick(c)">
                 <td class="hidden">{{c.id}}</td>
                 <td>{{c.first_name}}</td>
                 <td>{{c.last_name}}</td>
