@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Customer} from '../customers/customer';
+import { Customer } from '../customers/customer';
 
 @Injectable()
 export class DataManagerService {
+
 
   private customers: Customer[];
 
@@ -12,21 +13,23 @@ export class DataManagerService {
   getCustomers() {
     return this.customers;
   }
-  getCustomer(id:number) {
+  getCustomer(id: number) {
 
-    return this.customers.find(function(element) {
-      return element.id==id;
+    return this.customers.find(function (element) {
+      return element.id == id;
     });
   }
 
-  deleteCustomer(cust:Customer)
-  { 
-    this.customers.splice(this.customers.indexOf(cust),1);
+  editCustomer(arg0: any): any {
+    throw new Error("Method not implemented.");
+  }
+  
+  deleteCustomer(cust: Customer) {
+    this.customers.splice(this.customers.indexOf(cust), 1);
   }
 
-  addNewCustomer(customer:Customer)
-  {
-    customer.id=this.getNextId();
+  addNewCustomer(customer: Customer) {
+    customer.id = this.getNextId();
     this.customers.push(customer);
   }
 
@@ -36,7 +39,8 @@ export class DataManagerService {
     // Return this-plus-one 
     return maxId + 1;
   }
-  private loadCustomers() { this.customers=[{ "id": 1, "first_name": "Shena", "last_name": "Szimoni", "city": "Sinmak", "email": "sszimoni0@thetimes.co.uk", "website": "http://clickbank.net/donec/vitae/nisi/nam/ultrices.jpg", "birthdate": "1990-05-21T07:50:11Z", "credits": 5230 },
+  private loadCustomers() {
+  this.customers = [{ "id": 1, "first_name": "Shena", "last_name": "Szimoni", "city": "Sinmak", "email": "sszimoni0@thetimes.co.uk", "website": "http://clickbank.net/donec/vitae/nisi/nam/ultrices.jpg", "birthdate": "1990-05-21T07:50:11Z", "credits": 5230 },
   { "id": 2, "first_name": "Ellynn", "last_name": "Malins", "city": "Liangbing", "email": "emalins1@toplist.cz", "website": "https://nydailynews.com/aliquam/erat/volutpat/in/congue/etiam/justo.xml", "birthdate": "1993-02-06T17:36:05Z", "credits": 7156 },
   { "id": 3, "first_name": "Rafaelia", "last_name": "Trevascus", "city": "Brovary", "email": "rtrevascus2@spiegel.de", "website": "https://posterous.com/congue/etiam/justo.html", "birthdate": "1997-10-28T12:20:03Z", "credits": 3202 },
   { "id": 4, "first_name": "Petronille", "last_name": "Truesdale", "city": "Tamiso", "email": "ptruesdale3@hubpages.com", "website": "https://smugmug.com/pharetra/magna/ac/consequat/metus/sapien/ut.jpg", "birthdate": "1994-03-03T13:24:40Z", "credits": 3994 },
@@ -235,6 +239,6 @@ export class DataManagerService {
   { "id": 197, "first_name": "Cookie", "last_name": "Travers", "city": "Sobontoro", "email": "ctravers5g@gnu.org", "website": "https://sitemeter.com/tellus/semper/interdum/mauris.js", "birthdate": "1993-12-17T11:14:50Z", "credits": 3912 },
   { "id": 198, "first_name": "Guenevere", "last_name": "Elsmor", "city": "Janakpur", "email": "gelsmor5h@artisteer.com", "website": "http://dropbox.com/magna/ac/consequat/metus/sapien/ut/nunc.json", "birthdate": "1994-12-01T18:52:21Z", "credits": 5360 },
   { "id": 199, "first_name": "Marysa", "last_name": "Emmanueli", "city": "Liuxiang", "email": "memmanueli5i@vimeo.com", "website": "http://flickr.com/maecenas/pulvinar/lobortis/est/phasellus/sit.png", "birthdate": "1998-03-17T10:49:56Z", "credits": 4447 },
-  { "id": 200, "first_name": "Leeland", "last_name": "Brobyn", "city": "Balboa", "email": "lbrobyn5j@google.de", "website": "http://google.com.au/ornare.xml", "birthdate": "1994-03-05T00:16:23Z", "credits": 5134 }];  
+  { "id": 200, "first_name": "Leeland", "last_name": "Brobyn", "city": "Balboa", "email": "lbrobyn5j@google.de", "website": "http://google.com.au/ornare.xml", "birthdate": "1994-03-05T00:16:23Z", "credits": 5134 }];
   }
 }

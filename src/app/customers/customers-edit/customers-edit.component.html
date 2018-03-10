@@ -1,3 +1,43 @@
-<p>
-  customers-edit works!
-</p>
+<div class="cotainer">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel">
+          <div class="panel-body">
+            <dl class="dl-horizontal">
+              <h1>Create New Customer:</h1>
+              <dt>First Name: </dt>
+              <dd>
+                <input class="form-group" [(ngModel)]="customer.first_name" />
+              </dd>
+              <dt>Last Name: </dt>
+              <dd>
+                <input class="form-group" [(ngModel)]="customer.last_name">
+              </dd>
+              <dt>City: </dt>
+              <dd>
+                <input class="form-group" [(ngModel)]="customer.city">
+              </dd>
+              <dt>Email: </dt>
+              <dd>
+                <input class="form-group" [(ngModel)]="customer.email">
+              </dd>
+              <dt>Website: </dt>
+              <dd>
+                <input class="form-group" [(ngModel)]="customer.website">
+              </dd>
+              <dt>Birthdate: </dt>
+              <dd>
+                <input class="form-group" type="email"  name="date" [(ngModel)]="customer.birthdate" />
+              </dd>
+            </dl>
+  
+            <div class="btn-toolbar text-center" role="toolbar">
+              <button class="btn btn-default" (click)='this.router.navigate(["/customers"])'>Back to list</button>
+              <button *ngIf="!toDelete" type="button" class="btn btn-success" (click)="onClickAdd()">Add this customer</button>
+              <button *ngIf="toDelete" type="button" class="btn btn-danger" (click)="onClickDeleteAccept()">Yes, Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

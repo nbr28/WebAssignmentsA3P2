@@ -23,6 +23,6 @@ export class CustomersCreateComponent implements OnInit {
   onClickAdd() {
     this.service.addNewCustomer(this.customer);
     this.router.navigate(["/customers"]);
-  }
+    }
 
 }
