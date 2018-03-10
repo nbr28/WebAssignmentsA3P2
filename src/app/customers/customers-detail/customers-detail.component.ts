@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import {Customer} from '../customer';
 
 @Component({
   selector: 'app-customers-detail',
@@ -8,8 +9,11 @@ import { Router } from '@angular/router';
 })
 export class CustomersDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() selectedCust: Customer;
 
+  constructor() {
+   }
+  
   ngOnInit() {
   }
 

@@ -10,6 +10,8 @@ import { Customer } from '../customer';
 export class CustomersListComponent implements OnInit {
 
   customers: Customer[];
+  selectedCust: Customer;
+  
   // Assuming that the component 
 // has a property/field named "customers"...
 constructor(private m: DataManagerService) {
@@ -21,4 +23,7 @@ constructor(private m: DataManagerService) {
   ngOnInit() {
   }
 
+  onClick(c: Customer) {
+    this.selectedCust = c;
+  }
 }
