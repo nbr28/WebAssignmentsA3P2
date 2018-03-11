@@ -1,44 +1,50 @@
 <div class="cotainer">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="panel">
-          <div class="panel-body">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel">
+        <div class="panel-body">
+          <form ngNativeValidate>
             <dl class="dl-horizontal">
-              <h1>Create New Customer:</h1>
+              <h1>Edit customer - {{customer.first_name}} {{customer.last_name}}</h1>
+              <h4>Make changes, and click the save button</h4>
               <dt>First Name: </dt>
               <dd>
-                <input class="form-group" [(ngModel)]="customer.first_name" />
+                <input name="firstName" class="form-group" [(ngModel)]="customer.first_name" type="text" />
               </dd>
               <dt>Last Name: </dt>
               <dd>
-                <input class="form-group" [(ngModel)]="customer.last_name">
+                <input name="LastName" class="form-group" [(ngModel)]="customer.last_name" type="text">
               </dd>
               <dt>City: </dt>
               <dd>
-                <input class="form-group" [(ngModel)]="customer.city">
+                <input name="city" class="form-group" [(ngModel)]="customer.city" type="text">
               </dd>
               <dt>Email: </dt>
               <dd>
-                <input class="form-group" [(ngModel)]="customer.email">
+                <input name="email" class="form-group" required pattern="" [(ngModel)]="customer.email" type="email" placeholder="Must be a valid email address">
               </dd>
               <dt>Website: </dt>
               <dd>
-                <input class="form-group" [(ngModel)]="customer.website">
+                <input name="website" class="form-group" [(ngModel)]="customer.website" type="url" placeholder="Must be a valid url">
               </dd>
               <dt>Birthdate: </dt>
               <dd>
-                <input class="form-group" type="email"  name="date" [(ngModel)]="customer.birthdate" />
+                <input name="birthDay" class="form-group" type="email" name="date" [(ngModel)]="customer.birthdate" type="date">
+              </dd>
+              <dt>Credits: </dt>
+              <dd>
+                <input name="credits" class="form-group" min="1000" max="9999" [(ngModel)]="customer.credits" type="number" placeholder="A number bettween 1000 and 9999">
               </dd>
             </dl>
-  
             <div class="btn-toolbar text-center" role="toolbar">
               <button class="btn btn-default" (click)='this.router.navigate(["/customers"])'>Back to list</button>
               <button class="btn btn-default" (click)='backToDetails()'>Back to Details</button>
               <button *ngIf="!toDelete" type="button" class="btn btn-primary" (click)="onClickAdd()">Save Customer</button>
               <button *ngIf="toDelete" type="button" class="btn btn-danger" (click)="onClickDeleteAccept()">Yes, Delete</button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+</div>

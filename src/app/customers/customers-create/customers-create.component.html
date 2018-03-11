@@ -8,31 +8,31 @@
               <h1>Create New Customer:</h1>
               <dt>First Name: </dt>
               <dd>
-                <input name="firstName" class="form-group" [(ngModel)]="customer.first_name"  type="text"/>
+                <input name="firstName" class="form-group" [(ngModel)]="customer.first_name"  type="text" required/>
               </dd>
               <dt>Last Name: </dt>
               <dd>
-                <input name="LastName" class="form-group" [(ngModel)]="customer.last_name"   type="text">
+                <input name="LastName" class="form-group" [(ngModel)]="customer.last_name"   type="text" required>
               </dd>
               <dt>City: </dt>
               <dd>
-                <input name="city" class="form-group" [(ngModel)]="customer.city"   type="text">
+                <input name="city" class="form-group" [(ngModel)]="customer.city"   type="text" required>
               </dd>
               <dt>Email: </dt>
               <dd>
-                <input name="email" class="form-group" required pattern="" [(ngModel)]="customer.email" type="email" placeholder="Must be a valid email address">
+                <input name="email" class="form-group" required pattern="" [(ngModel)]="customer.email" type="email"  placeholder="Must be a valid email address" required>
               </dd>
               <dt>Website: </dt>
               <dd>
-                <input name="website" class="form-group" [(ngModel)]="customer.website" type="url" placeholder="Must be a valid url">
+                <input name="website" class="form-group" [(ngModel)]="customer.website" type="url" placeholder="Must be a valid url" required>
               </dd>
               <dt>Birthdate: </dt>
               <dd>
-                <input name="birthDay" class="form-group" type="email" name="date" [(ngModel)]="customer.birthdate" type="date">
+                <input name="birthDay" class="form-group" type="email" name="date" [(ngModel)]="customer.birthdate" type="date" required>
               </dd>
               <dt>Credits: </dt>
               <dd>
-                <input name="credits" class="form-group" min="1000" max="9999" [(ngModel)]="customer.credits" type="number" placeholder="A number bettween 1000 and 9999">
+                <input name="credits" class="form-group" min="1000" max="9999" [(ngModel)]="customer.credits" type="number" placeholder="A number bettween 1000 and 9999" required>
               </dd>
             </dl>
 
