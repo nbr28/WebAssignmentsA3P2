@@ -32,14 +32,15 @@ export class DataManagerService {
   }
 
   addNewCustomer(customer: Customer) {
-    customer.id = this.getNextId();
+    if (customer.id == null)
+      customer.id = this.getNextId();
     this.customers.push(customer);
     this.sortArray();
   }
 
   private sortArray() {
     this.customers.sort(function (a, b) {
-      if(a.last_name==null || b.last_name==null) return -1;//if bad data is inside
+      if (a.last_name == null || b.last_name == null) return -1;//if bad data is inside
       if (a.last_name.toLowerCase() < b.last_name.toLowerCase()) return -1;
       if (a.last_name.toLowerCase() > b.last_name.toLowerCase()) return 1;
       return 0;
