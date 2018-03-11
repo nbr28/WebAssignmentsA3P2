@@ -39,8 +39,9 @@ export class DataManagerService {
 
   private sortArray() {
     this.customers.sort(function (a, b) {
-      if(a.first_name < b.first_name) return -1;
-      if(a.first_name > b.first_name) return 1;
+      if(a.last_name==null || b.last_name==null) return -1;//if bad data is inside
+      if (a.last_name.toLowerCase() < b.last_name.toLowerCase()) return -1;
+      if (a.last_name.toLowerCase() > b.last_name.toLowerCase()) return 1;
       return 0;
     });
   }
